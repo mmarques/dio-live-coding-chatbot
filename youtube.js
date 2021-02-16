@@ -15,7 +15,7 @@ function searchVideoURL(message, queryText) {
   // encapsulando função de search em uma promise para conseguirmos retornar os resultados do callback
     return new Promise((resolve, _) => {
       // realizando a busca baseada na concatenação da sring e do queryText
-        youtube.search(`Exercício em casa para ${queryText}`, 2, function(error, result) {
+        youtube.search(queryText, 2, {channelId: 'UCcaFUFLpcXahdQWJEBagp0A'}, function(error, result) {
             if (error) {
               // caso ocorra algum erro essa mensagem será retornada
               // lembrem-se que a melhor prática seria rejeitar essa promise nesse ponto
