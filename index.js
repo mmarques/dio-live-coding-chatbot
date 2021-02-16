@@ -8,7 +8,8 @@ const dialogflow = require('./dialogflow');
 const youtube = require('./youtube');
 
 // token recebido pelo bot father
-const token = 'COLOQUE O SEU TOKEN AQUI';
+const config = require('./configs/telegram.json');
+const { token } = config;
 
 // nova instância do telegram
 const bot = new TelegramBot(token, { polling: true });
@@ -26,10 +27,10 @@ bot.on('message', async (msg) => {
     let textResponse = dfResponse.text;
     
     // verifica a intenção a partir da resposta do dialogflow
-    if (dfResponse.intent === 'Treino específico') {
+    if (dfResponse.intent === 'Final Fantasy OST Extended') {
         // modifica o texto para os dados retornados a partir da busca realizada no youtube
-        // lembre-se que para acessar o campo corpo dentro de fields ele teve que ser definido como uma entidade no dialogflow
-        textResponse = await youtube.searchVideoURL(textResponse, dfResponse.fields.corpo.stringValue);
+        // lembre-se que para acessar o campo ost dentro de fields ele teve que ser definido como uma entidade no dialogflow
+        textResponse = await youtube.searchVideoURL(textResponse, dfResponse.fields.ost.stringValue);
     }
     
     // envio da mensagem para o usuário do telegram

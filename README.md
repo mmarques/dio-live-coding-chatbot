@@ -31,9 +31,9 @@
 - Clique na engrenagem para configurar o agent
 - Clique no service id, você será redirecionado para o painel do GCP, clique nos 3 pontinhos abaixo de ações e crie uma chave to tipo json
 - Após o download da chave, substitua o conteúdo do arquivo agent.json pelo conteúdo da sua chave
-- Crie uma nova intenção chamada "Treino específico"
-- Adicione frases de treinamento com algumas partes do corpo
-- Defina entidades do tipo "corpo" e seus sinônimos
+- Crie uma nova intenção chamada "Final Fantasy OST Extended"
+- Adicione frases de treinamento com alguns OSTs
+- Defina entidades do tipo "ost" e seus sinônimos
 
 ### 7) Para gerar credenciais
 - [https://console.developers.google.com/start/api?id=youtube](https://console.developers.google.com/start/api?id=youtube) (Youtube)
